@@ -1,0 +1,3650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Naverstay - верстка сайтов и анимации</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>@charset "utf-8";
+    @font-face {
+        font-family: FontAwesome;
+        src: url(./font/fontawesome-webfont.eot?v=3.1.0);
+        src: url(./font/fontawesome-webfont.eot?#iefix&v=3.1.0) format('embedded-opentype'), url(./font/fontawesome-webfont.woff?v=3.1.0) format('woff'), url(./font/fontawesome-webfont.ttf?v=3.1.0) format('truetype'), url(./font/fontawesome-webfont.svg#fontawesomeregular?v=3.1.0) format('svg');
+        font-weight: 400;
+        font-style: normal
+    }
+
+    [class*=" icon-"]:before, [class^=icon-]:before {
+        text-decoration: inherit;
+        display: inline-block;
+        speak: none
+    }
+
+    .icon-large:before {
+        vertical-align: -10%;
+        font-size: 1.3333333333333333em
+    }
+
+    a [class*=" icon-"], a [class*=" icon-"]:before, a [class^=icon-], a [class^=icon-]:before {
+        display: inline
+    }
+
+    [class*=" icon-"].icon-fixed-width, [class^=icon-].icon-fixed-width {
+        display: inline-block;
+        width: 1.2857142857142858em;
+        text-align: center
+    }
+
+    [class*=" icon-"].icon-fixed-width.icon-large, [class^=icon-].icon-fixed-width.icon-large {
+        width: 1.5714285714285714em
+    }
+
+    ul.icons-ul {
+        list-style-type: none;
+        text-indent: -.7142857142857143em;
+        margin-left: 2.142857142857143em
+    }
+
+    ul.icons-ul > li .icon-li {
+        width: .7142857142857143em;
+        display: inline-block;
+        text-align: center
+    }
+
+    [class*=" icon-"].hide, [class^=icon-].hide {
+        display: none
+    }
+
+    .icon-muted {
+        color: #eee
+    }
+
+    .icon-light {
+        color: #fff
+    }
+
+    .icon-dark {
+        color: #333
+    }
+
+    .icon-border {
+        border: 1px solid #eee;
+        padding: .2em .25em .15em;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px
+    }
+
+    .icon-2x {
+        font-size: 2em
+    }
+
+    .icon-2x.icon-border {
+        border-width: 2px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px
+    }
+
+    .icon-3x {
+        font-size: 3em
+    }
+
+    .icon-3x.icon-border {
+        border-width: 3px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px
+    }
+
+    .icon-4x {
+        font-size: 4em
+    }
+
+    .icon-4x.icon-border {
+        border-width: 4px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px
+    }
+
+    .icon-5x {
+        font-size: 5em
+    }
+
+    .icon-5x.icon-border {
+        border-width: 5px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px
+    }
+
+    .pull-right {
+        float: right
+    }
+
+    .pull-left {
+        float: left
+    }
+
+    [class*=" icon-"].pull-left, [class^=icon-].pull-left {
+        margin-right: .3em
+    }
+
+    [class*=" icon-"].pull-right, [class^=icon-].pull-right {
+        margin-left: .3em
+    }
+
+    [class*=" icon-"], [class^=icon-] {
+        font-family: FontAwesome;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: normal;
+        vertical-align: baseline;
+        background-image: none;
+        background-position: 0 0;
+        background-repeat: repeat;
+        margin-top: 0
+    }
+
+    .btn [class*=" icon-"].icon-large, .btn [class^=icon-].icon-large, .nav [class*=" icon-"].icon-large, .nav [class^=icon-].icon-large, .nav-pills [class*=" icon-"], .nav-pills [class*=" icon-"].icon-large, .nav-pills [class^=icon-], .nav-pills [class^=icon-].icon-large, .nav-tabs [class*=" icon-"], .nav-tabs [class*=" icon-"].icon-large, .nav-tabs [class^=icon-], .nav-tabs [class^=icon-].icon-large {
+        line-height: .9em
+    }
+
+    .btn [class*=" icon-"].icon-spin, .btn [class^=icon-].icon-spin, .icon-stack, .nav [class*=" icon-"].icon-spin, .nav [class^=icon-].icon-spin {
+        display: inline-block
+    }
+
+    .fancybox-nav, .n_logo, a, a:hover {
+        text-decoration: none
+    }
+
+    .dropdown-menu > .active > a > [class*=" icon-"], .dropdown-menu > .active > a > [class^=icon-], .dropdown-menu > li > a:hover > [class*=" icon-"], .dropdown-menu > li > a:hover > [class^=icon-], .dropdown-submenu:hover > a > [class*=" icon-"], .dropdown-submenu:hover > a > [class^=icon-], .icon-white, .nav-list > .active > a > [class*=" icon-"], .nav-list > .active > a > [class^=icon-], .nav-pills > .active > a > [class*=" icon-"], .nav-pills > .active > a > [class^=icon-], .navbar-inverse .nav > .active > a > [class*=" icon-"], .navbar-inverse .nav > .active > a > [class^=icon-] {
+        background-image: none
+    }
+
+    .btn [class*=" icon-"].pull-left.icon-2x, .btn [class*=" icon-"].pull-right.icon-2x, .btn [class^=icon-].pull-left.icon-2x, .btn [class^=icon-].pull-right.icon-2x {
+        margin-top: .18em
+    }
+
+    .btn [class*=" icon-"].icon-spin.icon-large, .btn [class^=icon-].icon-spin.icon-large {
+        line-height: .8em
+    }
+
+    .btn.btn-small [class*=" icon-"].pull-left.icon-2x, .btn.btn-small [class*=" icon-"].pull-right.icon-2x, .btn.btn-small [class^=icon-].pull-left.icon-2x, .btn.btn-small [class^=icon-].pull-right.icon-2x {
+        margin-top: .25em
+    }
+
+    .btn.btn-large [class*=" icon-"], .btn.btn-large [class^=icon-] {
+        margin-top: 0
+    }
+
+    .btn.btn-large [class*=" icon-"].pull-left.icon-2x, .btn.btn-large [class*=" icon-"].pull-right.icon-2x, .btn.btn-large [class^=icon-].pull-left.icon-2x, .btn.btn-large [class^=icon-].pull-right.icon-2x {
+        margin-top: .05em
+    }
+
+    .btn.btn-large [class*=" icon-"].pull-left.icon-2x, .btn.btn-large [class^=icon-].pull-left.icon-2x {
+        margin-right: .2em
+    }
+
+    .btn.btn-large [class*=" icon-"].pull-right.icon-2x, .btn.btn-large [class^=icon-].pull-right.icon-2x {
+        margin-left: .2em
+    }
+
+    .icon-stack {
+        position: relative;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        vertical-align: -35%
+    }
+
+    .icon-stack [class*=" icon-"], .icon-stack [class^=icon-] {
+        display: block;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 1em;
+        line-height: inherit
+    }
+
+    .icon-stack .icon-stack-base {
+        font-size: 2em
+    }
+
+    .icon-spin {
+        display: inline-block;
+        -moz-animation: spin 2s infinite linear;
+        -o-animation: spin 2s infinite linear;
+        -webkit-animation: spin 2s infinite linear;
+        animation: spin 2s infinite linear
+    }
+
+    @-moz-keyframes spin {
+        0% {
+            -moz-transform: rotate(0)
+        }
+        100% {
+            -moz-transform: rotate(359deg)
+        }
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0)
+        }
+        100% {
+            -webkit-transform: rotate(359deg)
+        }
+    }
+
+    @-o-keyframes spin {
+        0% {
+            -o-transform: rotate(0)
+        }
+        100% {
+            -o-transform: rotate(359deg)
+        }
+    }
+
+    @-ms-keyframes spin {
+        0% {
+            -ms-transform: rotate(0)
+        }
+        100% {
+            -ms-transform: rotate(359deg)
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0)
+        }
+        100% {
+            transform: rotate(359deg)
+        }
+    }
+
+    .icon-star:before {
+        content: "\f005"
+    }
+
+    .icon-camera:before {
+        content: "\f030"
+    }
+
+    .icon-align-justify:before {
+        content: "\f039"
+    }
+
+    .icon-eye-close:before {
+        content: "\f070"
+    }
+
+    .icon-external-link:before {
+        content: "\f08e"
+    }
+
+    .icon-link:before {
+        content: "\f0c1"
+    }
+
+    .icon-angle-left:before {
+        content: "\f104"
+    }
+
+    .icon-angle-right:before {
+        content: "\f105"
+    }
+
+    #slides {
+        position: relative
+    }
+
+    #slides .slides-container {
+        display: none
+    }
+
+    #slides .slides-container img {
+        max-width: inherit
+    }
+
+    #slides .slide_link {
+        display: block
+    }
+
+    #slides .slides-container .slides-detail {
+        margin: -200px 0 0;
+        padding: 50px 0;
+        width: 100%;
+        height: 300px;
+        background: rgba(0, 0, 0, .25);
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 10;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    #isotope, #isotope .item .thumb-hover, #slides .scrollable {
+        position: relative
+    }
+
+    #slides .slides-container .slides-detail:hover {
+        background: rgba(0, 0, 0, .5)
+    }
+
+    #slides .slides-container .slides-detail i {
+        margin: auto;
+        width: 130px;
+        height: 130px;
+        font-size: 130px;
+        line-height: 130px;
+        text-align: center;
+        display: block;
+        color: #fff;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    #slides .slides-container .slides-detail:hover i {
+        border-radius: 100%;
+        font-size: 100px;
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg)
+    }
+
+    #slides .slides-container .slides-detail h1 {
+        color: #fff
+    }
+
+    #slides .slides-container .slides-detail .lead {
+        margin-bottom: 20px;
+        color: #fff;
+        display: block;
+        font-size: 20px
+    }
+
+    #slides .slides-container .slides-detail .lead strong {
+        font-weight: 700
+    }
+
+    #slides .scrollable {
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        height: 100%
+    }
+
+    #slides .scrollable:after {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+    .slides-navigation a {
+        margin-top: 150px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        z-index: 20
+    }
+
+    .slides-navigation a.prev {
+        margin-left: -50px;
+        left: 50%
+    }
+
+    .slides-navigation a.next {
+        margin-right: -50px;
+        right: 50%
+    }
+
+    .slides-navigation a.next i, .slides-navigation a.prev i {
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 0, 0, .5);
+        line-height: 50px;
+        color: #fff;
+        text-align: center;
+        display: block;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .slides-navigation a.next i:hover, .slides-navigation a.prev i:hover {
+        background: rgba(0, 0, 0, .75)
+    }
+
+    .slides-pagination {
+        z-index: 3;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        height: 36px;
+        padding-top: 3px;
+        text-align: center;
+        background: rgba(0, 0, 0, .2)
+    }
+
+    .slides-pagination a {
+        position: relative;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        margin: 0 5px;
+        background: rgba(255, 255, 255, .001);
+        border: 4px solid rgba(255, 255, 255, .3);
+        border-radius: 100%;
+        display: inline-block;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s;
+        transition: all linear .25s;
+        font-size: 0;
+        color: transparent
+    }
+
+    .slides-pagination a.current, .slides-pagination a:hover {
+        border: 4px solid rgba(255, 255, 255, .8)
+    }
+
+    .slides-pagination a.current {
+        cursor: default
+    }
+
+    .isotope-item {
+        z-index: 2
+    }
+
+    .isotope-hidden.isotope-item {
+        pointer-events: none;
+        z-index: 1
+    }
+
+    .isotope, .isotope .isotope-item {
+        -webkit-transition-duration: .8s;
+        -moz-transition-duration: .8s;
+        -ms-transition-duration: .8s;
+        -o-transition-duration: .8s;
+        transition-duration: .8s
+    }
+
+    .isotope {
+        -webkit-transition-property: height, width;
+        -moz-transition-property: height, width;
+        -ms-transition-property: height, width;
+        -o-transition-property: height, width;
+        transition-property: height, width
+    }
+
+    .isotope .isotope-item {
+        -webkit-transition-property: -webkit-transform, opacity;
+        -moz-transition-property: -moz-transform, opacity;
+        -ms-transition-property: -ms-transform, opacity;
+        -o-transition-property: -o-transform, opacity;
+        transition-property: transform, opacity
+    }
+
+    .isotope .isotope-item.no-transition, .isotope.no-transition, .isotope.no-transition .isotope-item {
+        -webkit-transition-duration: 0s;
+        -moz-transition-duration: 0s;
+        -ms-transition-duration: 0s;
+        -o-transition-duration: 0s;
+        transition-duration: 0s
+    }
+
+    #isotope {
+        min-height: 200px;
+        margin-bottom: 40px;
+        overflow: visible !important
+    }
+
+    #isotope .item {
+        display: none;
+        width: 20%;
+        padding: .5%
+    }
+
+    #isotope .item:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5)
+    }
+
+    #isotope .item img {
+        display: block;
+        width: 100%
+    }
+
+    #isotope .item a.folio {
+        display: block
+    }
+
+    #isotope .item .thumb-hover a {
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        line-height: 50px;
+        color: #fff;
+        text-align: center;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        transition: all linear .1s;
+        -ms-transition: all linear .1s;
+        -moz-transition: all linear .1s;
+        -webkit-transition: all linear .1s;
+        -o-transition: all linear .1s
+    }
+
+    #isotope .item .thumb-hover a.view-fancybox {
+        margin: 0 0 0 -50px;
+        background: #333;
+        left: 50%
+    }
+
+    #isotope .item .thumb-hover a.link {
+        margin: 0 -50px 0 0;
+        right: 50%
+    }
+
+    #isotope .item .thumb-hover a.link:hover, .fancybox-close, .fancybox-next, .fancybox-next span {
+        right: 0
+    }
+
+    #isotope .item:hover .thumb-hover a {
+        margin-top: -25px;
+        opacity: 1;
+        top: 50%
+    }
+
+    #isotope .item:hover .thumb-hover a:hover {
+        margin: 0;
+        top: 0
+    }
+
+    #isotope .item .thumb-hover a:hover {
+        z-index: 10;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        line-height: 100%;
+        opacity: 1;
+        top: 0
+    }
+
+    #isotope .item .thumb-hover a.view-fancybox:hover {
+        left: 0
+    }
+
+    #isotope .item .thumb-hover a:hover i {
+        margin-top: -25px;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%
+    }
+
+    @media (min-width: 980px) and (max-width: 1199px) {
+        #isotope .item {
+            width: 24.95%
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 979px) {
+        #isotope .item {
+            width: 24.95%
+        }
+    }
+
+    @media (min-width: 480px) and (max-width: 767px) {
+        #isotope {
+            margin-bottom: 40px
+        }
+
+        #isotope .item {
+            margin-bottom: 0;
+            width: 100%
+        }
+    }
+
+    @media (max-width: 479px) {
+        #isotope {
+            margin-bottom: 40px
+        }
+
+        #isotope .item {
+            margin-bottom: 0;
+            width: 100%
+        }
+    }
+
+    .fancybox-image, .fancybox-inner, .fancybox-nav, .fancybox-nav span, .fancybox-outer, .fancybox-skin, .fancybox-tmp, .fancybox-wrap, .fancybox-wrap iframe, .fancybox-wrap object {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+        vertical-align: top
+    }
+
+    .fancybox-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 8020
+    }
+
+    .fancybox-inner, .fancybox-outer, .fancybox-skin {
+        position: relative
+    }
+
+    .fancybox-skin {
+        background: #fff;
+        color: #333;
+        text-shadow: none;
+        border-radius: 0
+    }
+
+    .fancybox-opened {
+        z-index: 8030
+    }
+
+    .fancybox-opened .fancybox-skin {
+        -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, .5);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .5)
+    }
+
+    .fancybox-inner {
+        overflow: hidden
+    }
+
+    .fancybox-type-iframe .fancybox-inner {
+        -webkit-overflow-scrolling: touch
+    }
+
+    .fancybox-error {
+        color: #444;
+        font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 15px;
+        white-space: nowrap
+    }
+
+    .fancybox-iframe, .fancybox-image {
+        display: block;
+        width: 100%;
+        height: 100%
+    }
+
+    .fancybox-image {
+        max-width: 100%;
+        max-height: 100%
+    }
+
+    #fancybox-loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -22px;
+        margin-left: -22px;
+        background-position: 0 -108px;
+        opacity: .8;
+        cursor: pointer;
+        z-index: 8060
+    }
+
+    .fancybox-prev, .fancybox-prev span {
+        left: 0
+    }
+
+    .fancybox-close, .fancybox-nav {
+        cursor: pointer;
+        z-index: 8040;
+        top: 0
+    }
+
+    #fancybox-loading div {
+        width: 44px;
+        height: 44px
+    }
+
+    .fancybox-close {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, .5);
+        color: #000;
+        font-size: 36px;
+        line-height: 36px;
+        text-align: center
+    }
+
+    .sidebar-menu, body, html {
+        height: 100%
+    }
+
+    .fancybox-close:hover {
+        background: rgba(0, 0, 0, .25);
+        color: #fff
+    }
+
+    .fancybox-nav {
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        background: rgba(0, 0, 0, .001)
+    }
+
+    .fancybox-nav span {
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 0, 0, .25);
+        margin-top: -25px;
+        cursor: pointer;
+        z-index: 8040;
+        visibility: hidden;
+        text-align: center;
+        color: #fff;
+        line-height: 50px
+    }
+
+    .fancybox-nav:hover span {
+        visibility: visible
+    }
+
+    .fancybox-tmp {
+        position: absolute;
+        top: -99999px;
+        left: -99999px;
+        visibility: hidden;
+        max-width: 99999px;
+        max-height: 99999px;
+        overflow: visible !important
+    }
+
+    .fancybox-lock {
+        overflow: hidden
+    }
+
+    .fancybox-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        display: none;
+        z-index: 8010;
+        background: rgba(0, 0, 0, .5)
+    }
+
+    .fancybox-overlay-fixed {
+        position: fixed;
+        bottom: 0;
+        right: 0
+    }
+
+    .fancybox-lock .fancybox-overlay {
+        overflow: auto;
+        overflow-y: scroll
+    }
+
+    .fancybox-title {
+        visibility: hidden;
+        font: 400 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: relative;
+        text-shadow: none;
+        z-index: 8050
+    }
+
+    .fancybox-opened .fancybox-title {
+        visibility: visible
+    }
+
+    .fancybox-title-float-wrap {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        margin-bottom: -35px;
+        z-index: 8050;
+        text-align: center
+    }
+
+    .fancybox-title-float-wrap .child {
+        display: inline-block;
+        margin-right: -100%;
+        padding: 2px 20px;
+        background: 0 0;
+        background: rgba(0, 0, 0, .8);
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        text-shadow: 0 1px 2px #222;
+        color: #fff;
+        font-weight: 700;
+        line-height: 24px;
+        white-space: nowrap
+    }
+
+    .fancybox-title-outside-wrap {
+        position: relative;
+        margin-top: 10px;
+        color: #fff
+    }
+
+    .fancybox-title-inside-wrap {
+        padding-top: 10px
+    }
+
+    .fancybox-title-over-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        padding: 10px;
+        background: #000;
+        background: rgba(0, 0, 0, .8)
+    }
+
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        animation-fill-mode: both
+    }
+
+    .animated, .timer_holder {
+        -webkit-animation-fill-mode: both
+    }
+
+    .animated.hinge {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s
+    }
+
+    @-webkit-keyframes tada {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+        10%, 20% {
+            -webkit-transform: scale(.9) rotate(-3deg);
+            transform: scale(.9) rotate(-3deg)
+        }
+        30%, 50%, 70%, 90% {
+            -webkit-transform: scale(1.1) rotate(3deg);
+            transform: scale(1.1) rotate(3deg)
+        }
+        40%, 60%, 80% {
+            -webkit-transform: scale(1.1) rotate(-3deg);
+            transform: scale(1.1) rotate(-3deg)
+        }
+        100% {
+            -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0)
+        }
+    }
+
+    @keyframes tada {
+        0% {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1)
+        }
+        10%, 20% {
+            -webkit-transform: scale(.9) rotate(-3deg);
+            -ms-transform: scale(.9) rotate(-3deg);
+            transform: scale(.9) rotate(-3deg)
+        }
+        30%, 50%, 70%, 90% {
+            -webkit-transform: scale(1.1) rotate(3deg);
+            -ms-transform: scale(1.1) rotate(3deg);
+            transform: scale(1.1) rotate(3deg)
+        }
+        40%, 60%, 80% {
+            -webkit-transform: scale(1.1) rotate(-3deg);
+            -ms-transform: scale(1.1) rotate(-3deg);
+            transform: scale(1.1) rotate(-3deg)
+        }
+        100% {
+            -webkit-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0)
+        }
+    }
+
+    .tada {
+        -webkit-animation-name: tada;
+        animation-name: tada
+    }
+
+    .blog-filter p a.active, .blog-filter p a:hover, .contact-form input[type=text], .contact-form textarea, .products-filter p a.active, .products-filter p a:hover, .thumbnail .blog-detail .date, .thumbnail-services h5, .thumbnail-services i, a {
+        color: #fc0
+    }
+
+    #isotope .item .thumb-hover a.link, #slides .slides-container .slides-detail:hover i, .hero-unit .btn:hover, .sidebar-menu-settings p a.bg-aqua, .thumbnail .blog-detail .btn, .thumbnail .btn:hover, .thumbnail .thumb-hover a, .thumbnail .thumb-hover a:hover, .thumbnail .thumbnail-detail, .thumbnail-services:hover i {
+        background: #fc0
+    }
+
+    .thumbnail-services:hover i {
+        border-color: #fc0
+    }
+
+    @font-face {
+        font-family: LogoFont;
+        src: url(./font/BatmanForeverAlternate.eot);
+        src: url(./font/BatmanForeverAlternate.eot?#iefix) format("embedded-opentype"), url(./font/BatmanForeverAlternate.svg) format("svg"), url(./font/BatmanForeverAlternate.woff) format("woff"), url(./font/BatmanForeverAlternate.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    @font-face {
+        font-family: RobotoBold;
+        src: url(./font/Roboto-Bold.eot);
+        src: url(./font/Roboto-Bold.eot?#iefix) format("embedded-opentype"), url(./font/Roboto-Bold.svg) format("svg"), url(./font/Roboto-Bold.woff) format("woff"), url(./font/Roboto-Bold.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    @font-face {
+        font-family: RobotoLight;
+        src: url(./font/Roboto-Light.eot);
+        src: url(./font/Roboto-Light.eot?#iefix) format("embedded-opentype"), url(./font/Roboto-Light.svg) format("svg"), url(./font/Roboto-Light.woff) format("woff"), url(./font/Roboto-Light.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    @font-face {
+        font-family: RobotoThin;
+        src: url(./font/Roboto-Thin.eot);
+        src: url(./font/Roboto-Thin.eot?#iefix) format("embedded-opentype"), url(./font/Roboto-Thin.svg) format("svg"), url(./font/Roboto-Thin.woff) format("woff"), url(./font/Roboto-Thin.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    @font-face {
+        font-family: RobotoReg;
+        src: url(./font/Roboto-Condensed.eot);
+        src: url(./font/Roboto-Condensed.eot?#iefix) format("embedded-opentype"), url(./font/Roboto-Condensed.svg) format("svg"), url(./font/Roboto-Condensed.woff) format("woff"), url(./font/Roboto-Condensed.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal
+    }
+
+    a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, input, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, select, small, span, strike, strong, sub, sup, table, textarea, tt, u, ul, var {
+        border: 0;
+        outline: 0;
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    html {
+        background: url(./img/menu-panel-bg.jpg);
+        overflow: hidden
+    }
+
+    body {
+        font: 300 14px/20px RobotoReg, Arial, Helvetica, sans-serif;
+        color: #333
+    }
+
+    h5, h6 {
+        line-height: 20px
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        font-weight: 300;
+        font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
+        color: #333;
+        text-transform: uppercase
+    }
+
+    .lead span, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, strong {
+        font-weight: 700
+    }
+
+    h1 {
+        font-size: 70px;
+        line-height: 70px
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 50px
+    }
+
+    h3 {
+        font-size: 35px;
+        line-height: 35px
+    }
+
+    h4 {
+        font-size: 25px;
+        line-height: 25px
+    }
+
+    h5 {
+        font-size: 20px
+    }
+
+    h6 {
+        font-size: 14px;
+        color: #666
+    }
+
+    h1.white, h2.white, h3.white, h4.white, h5.white, h6.white {
+        color: #fff
+    }
+
+    :focus, input, input:active, textarea, textarea:active {
+        outline: 0
+    }
+
+    textarea::-moz-placeholder {
+        color: #ccc
+    }
+
+    textarea::-webkit-input-placeholder {
+        color: #ccc
+    }
+
+    input::-moz-placeholder {
+        color: #ccc
+    }
+
+    input::-webkit-input-placeholder {
+        color: #ccc
+    }
+
+    textarea:focus::-webkit-input-placeholder {
+        color: transparent
+    }
+
+    textarea:focus::-moz-placeholder {
+        color: transparent
+    }
+
+    input:focus::-webkit-input-placeholder {
+        color: transparent
+    }
+
+    input:focus::-moz-placeholder {
+        color: transparent
+    }
+
+    a {
+        -ms-transition: color linear .25s;
+        -moz-transition: color linear .25s;
+        -webkit-transition: color linear .25s;
+        -o-transition: color linear .25s;
+        transition: color linear .25s
+    }
+
+    a:hover {
+        color: #333
+    }
+
+    p {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    hr {
+        margin: 0 0 39px;
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .05)
+    }
+
+    span.lead {
+        display: inline-block
+    }
+
+    .btn {
+        padding: 5px 10px;
+        background: #fff;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        text-shadow: none;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .btn, .sidebar-menu, .sidebar-menu ul li {
+        transition: all linear .25s
+    }
+
+    #control_panel {
+        z-index: 150;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        background: #fff;
+        border: 2px solid #000;
+        padding: 10px;
+        font-size: 16px
+    }
+
+    .gl_wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0
+    }
+
+    .hide {
+        display: none
+    }
+
+    .container {
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    .btn-large {
+        padding: 15px 20px
+    }
+
+    .margin-top {
+        margin-top: 40px
+    }
+
+    .half-margin-bottom {
+        margin-bottom: 20px
+    }
+
+    .margin-bottom {
+        margin-bottom: 40px
+    }
+
+    .sidebar-menu {
+        width: 220px;
+        background: url(./img/menu-panel-bg.jpg);
+        border-right: 5px solid #fff;
+        box-shadow: inset -2px 0 10px rgba(0, 0, 0, .25);
+        position: fixed;
+        top: 0;
+        left: -220px;
+        z-index: 1000;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .sidebar-menu.sidebar-menu-left {
+        left: 0;
+        box-shadow: inset -2px 0 10px rgba(0, 0, 0, .25), 1px 0 10px rgba(0, 0, 0, .6)
+    }
+
+    .sidebar-menu .logo {
+        margin: 20px auto;
+        display: block
+    }
+
+    .n_logo {
+        display: block;
+        position: relative;
+        margin: 10px 0;
+        color: #fff;
+        font: 22px/1 LogoFont, sans-serif;
+        text-align: center
+    }
+
+    .n_font {
+        font-family: LogoFont, sans-serif
+    }
+
+    .sidebar-menu ul {
+        margin: 0 0 40px;
+        list-style: none
+    }
+
+    .sidebar-menu ul li {
+        position: relative;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .sidebar-menu ul li a {
+        padding: 0 20px;
+        border-bottom: 1px dotted rgba(0, 0, 0, .15);
+        font: 300 14px/39px Roboto Condensed, Arial, Helvetica, sans-serif;
+        color: #666;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: block
+    }
+
+    .sidebar-menu ul li a.activeLink {
+        cursor: default
+    }
+
+    .sidebar-menu ul li.current a, .sidebar-menu ul li:hover {
+        background: rgba(0, 0, 0, .05)
+    }
+
+    .sidebar-menu ul li i {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .sidebar-menu ul li:hover i {
+        transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg)
+    }
+
+    .sidebar-menu ul li ul {
+        margin: 0;
+        width: 220px;
+        background: rgba(0, 0, 0, .5);
+        border-left: 5px solid #fff;
+        list-style: none;
+        opacity: 0;
+        position: absolute;
+        top: 10px;
+        left: -9999px;
+        z-index: 9999;
+        transition: opacity linear .25s, top linear .25s;
+        -ms-transition: opacity linear .25s, top linear .25s;
+        -moz-transition: opacity linear .25s, top linear .25s;
+        -webkit-transition: opacity linear .25s, top linear .25s;
+        -o-transition: opacity linear .25s, top linear .25s
+    }
+
+    .sidebar-menu ul li:hover ul {
+        opacity: 1;
+        top: 0;
+        left: 100%
+    }
+
+    .sidebar-menu ul li ul li a {
+        color: #fff;
+        text-align: left
+    }
+
+    .sidebar-menu ul li ul li a:hover {
+        background: rgba(0, 0, 0, .25)
+    }
+
+    .sidebar-menu-settings {
+        padding-top: 20px;
+        width: 220px;
+        height: 100%;
+        background: url(./img/menu-panel-bg.jpg);
+        border-right: 5px solid #f0f0f0;
+        box-shadow: inset -2px 0 10px rgba(0, 0, 0, .25);
+        position: fixed;
+        top: 0;
+        left: -220px;
+        z-index: 1000;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .external_link, .footer, .section {
+        position: absolute
+    }
+
+    .modal, .modal.fade.in {
+        top: 50%
+    }
+
+    .sidebar-menu-settings.sidebar-menu-left {
+        left: 0
+    }
+
+    .sidebar-menu-settings .close-sidebar-menu-settings i {
+        margin-top: 20px;
+        width: 50px;
+        height: 50px;
+        background: #f0f0f0;
+        border-radius: 0 5px 5px 0;
+        box-shadow: 1px 0 2px rgba(0, 0, 0, .1);
+        color: #999;
+        display: block;
+        right: -50px;
+        -ms-transition: all linear .1s;
+        -moz-transition: all linear .1s;
+        -webkit-transition: all linear .1s;
+        -o-transition: all linear .1s
+    }
+
+    .sidebar-menu .close-sidebar-menu, .sidebar-menu-settings .close-sidebar-menu-settings i {
+        text-align: center;
+        top: 50%;
+        position: absolute;
+        line-height: 50px;
+        cursor: pointer;
+        transition: all linear .1s
+    }
+
+    .sidebar-menu-settings .close-sidebar-menu-settings i:hover {
+        width: 70px;
+        color: #333;
+        right: -70px
+    }
+
+    .sidebar-menu-settings h6 {
+        margin-bottom: 10px;
+        text-align: center
+    }
+
+    .sidebar-menu-settings p {
+        margin-bottom: 15px;
+        overflow: auto
+    }
+
+    .sidebar-menu-settings p a {
+        margin: 0 5px 5px 0;
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(0, 0, 0, .25);
+        cursor: pointer;
+        display: block;
+        float: left
+    }
+
+    .sidebar-menu-settings p a.bg-nobg {
+        margin-left: 25px
+    }
+
+    .sidebar-menu-settings p a.bg-white {
+        background: #fff
+    }
+
+    .sidebar-menu-settings p a.bg-gray {
+        background: #f9f9f9
+    }
+
+    .sidebar-menu-settings p a.bg-dark {
+        background: #e5e5e5
+    }
+
+    .sidebar-menu-settings p a.bg-darker {
+        background: #ccc
+    }
+
+    .sidebar-menu-settings p a.bg-bar {
+        margin-left: 25px;
+        background: url(./img/bar-bg.png);
+        background-size: cover;
+        clear: left
+    }
+
+    .sidebar-menu-settings p a.bg-square {
+        background: url(./img/square-bg.png)
+    }
+
+    .sidebar-menu-settings p a.bg-parquet {
+        background: url(./img/parquet-bg.jpg)
+    }
+
+    .sidebar-menu-settings p a.bg-diag {
+        background: url(./img/diag-bg.png)
+    }
+
+    .sidebar-menu-settings p a.bg-sand {
+        background: url(./img/sand-bg.png)
+    }
+
+    .sidebar-menu-settings p a.bg-blue, .sidebar-menu-settings p a.color-blue {
+        margin-left: 25px;
+        background: #08b;
+        clear: left
+    }
+
+    .sidebar-menu-settings p a.bg-cyan, .sidebar-menu-settings p a.color-cyan {
+        background: #0cc
+    }
+
+    .sidebar-menu-settings p a.bg-aqua, .sidebar-menu-settings p a.color-aqua {
+        background: #0da
+    }
+
+    .sidebar-menu-settings p a.bg-green, .sidebar-menu-settings p a.color-green {
+        background: #5b0
+    }
+
+    .sidebar-menu-settings p a.bg-acid, .sidebar-menu-settings p a.color-acid {
+        background: #ad0
+    }
+
+    .sidebar-menu-settings p a.bg-yellow, .sidebar-menu-settings p a.color-yellow {
+        margin-left: 25px;
+        background: #fc0;
+        clear: left
+    }
+
+    .sidebar-menu-settings p a.bg-orange, .sidebar-menu-settings p a.color-orange {
+        background: #f90
+    }
+
+    .sidebar-menu-settings p a.bg-red, .sidebar-menu-settings p a.color-red {
+        background: #f33
+    }
+
+    .sidebar-menu-settings p a.bg-violet, .sidebar-menu-settings p a.color-violet {
+        background: #c06
+    }
+
+    .sidebar-menu-settings p a.bg-black, .sidebar-menu-settings p a.color-black {
+        background: #666
+    }
+
+    .sidebar-menu-settings p a span {
+        display: none
+    }
+
+    .sidebar-menu .close-sidebar-menu {
+        margin-top: -25px;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 0 5px 5px 0;
+        box-shadow: 1px 0 2px rgba(0, 0, 0, .2);
+        color: #999;
+        display: block;
+        right: -50px;
+        -ms-transition: all linear .1s;
+        -moz-transition: all linear .1s;
+        -webkit-transition: all linear .1s;
+        -o-transition: all linear .1s
+    }
+
+    #map-canvas div div + div a img, #map-canvas div.gmnoprint, .contact-form legend {
+        display: none
+    }
+
+    .sidebar-menu .close-sidebar-menu:hover {
+        width: 70px;
+        color: #333;
+        right: -70px;
+        box-shadow: 1px 0 2px rgba(0, 0, 0, .6)
+    }
+
+    .footer {
+        width: 100%;
+        bottom: 0
+    }
+
+    .footer .social-links {
+        background: rgba(0, 0, 0, .1);
+        box-shadow: none
+    }
+
+    .footer .social-links a i {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        color: #999
+    }
+
+    .footer .social-links a i:hover {
+        background: rgba(0, 0, 0, .1);
+        color: #666
+    }
+
+    .footer p {
+        margin: 20px;
+        font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
+        color: #999;
+        text-align: center;
+        text-transform: uppercase
+    }
+
+    .footer p span {
+        color: #333
+    }
+
+    .section {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 100%;
+        transition: all linear .5s;
+        -ms-transition: all linear .5s;
+        -moz-transition: all linear .5s;
+        -webkit-transition: all linear .5s;
+        -o-transition: all linear .5s
+    }
+
+    #map-canvas, .contact-form {
+        margin-bottom: 40px
+    }
+
+    .section.no_nice_scroll {
+        overflow: hidden !important
+    }
+
+    .section.section-animate {
+        left: 0
+    }
+
+    #about, #portfolio, #services {
+        background: #f9f9f9;
+        text-align: center
+    }
+
+    #portfolio .masonry-detail {
+        padding: 10px 10px 20px;
+        background: #fff;
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, .5)
+    }
+
+    #portfolio .masonry-detail h4 {
+        font-size: 18px;
+        font-weight: 700
+    }
+
+    .external_link {
+        right: 2px;
+        bottom: 2px;
+        font-size: 20px;
+        line-height: 1
+    }
+
+    .thumbnail, .thumbnail .thumb-hover {
+        position: relative
+    }
+
+    #portfolio .masonry-detail .date {
+        font-weight: 300;
+        font-style: normal;
+        color: #999
+    }
+
+    #blog, #contact {
+        background: #f9f9f9;
+        text-align: center
+    }
+
+    #map-canvas {
+        width: 100%;
+        height: 350px;
+        border-bottom: 5px solid #fff;
+        box-shadow: 0 -5px 0 #fff
+    }
+
+    .contact-form input[type=text], .contact-form textarea {
+        margin: 0 auto 20px;
+        padding: 19px;
+        width: 240px;
+        height: 30px;
+        border-color: #e5e5e5;
+        border-radius: 0;
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, .5);
+        font: 400 16px/30px Roboto Condensed, Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        display: block;
+        float: none
+    }
+
+    .blog-filter p a, .products-filter p a {
+        font-size: 14px;
+        font-family: Roboto Condensed, Arial, Helvetica, sans-serif
+    }
+
+    .modal-body .date, address {
+        margin-bottom: 40px
+    }
+
+    .contact-form textarea {
+        min-width: 240px;
+        max-width: 240px;
+        height: 120px
+    }
+
+    .contact-form button {
+        background: #333;
+        color: #fff
+    }
+
+    address strong {
+        text-transform: uppercase
+    }
+
+    .modal-backdrop, .modal-backdrop.fade.in {
+        opacity: .5;
+        filter: alpha(opacity=50)
+    }
+
+    .modal {
+        margin-top: -280px;
+        height: 560px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #333
+    }
+
+    .modal-header {
+        padding: 20px 15px 19px;
+        border-bottom: 1px solid #f0f0f0
+    }
+
+    .modal-body {
+        padding: 20px;
+        max-height: 450px
+    }
+
+    .blog-filter, .products-filter {
+        padding: 14px 0;
+        border-top: 1px dashed #e5e5e5;
+        border-bottom: 1px dashed #e5e5e5;
+        line-height: 30px
+    }
+
+    .modal-body .date {
+        background: #f9f9f9;
+        line-height: 30px;
+        font-style: normal;
+        color: #999;
+        display: block
+    }
+
+    .modal-body p {
+        margin-bottom: 0
+    }
+
+    .products-filter {
+        margin-bottom: 40px;
+        margin-left: 0;
+        text-align: center
+    }
+
+    .products-filter p {
+        margin-bottom: 0
+    }
+
+    .products-filter p a {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px 30px;
+        color: #999;
+        text-transform: uppercase
+    }
+
+    .products-filter.disable_mod p a {
+        color: #ff272f !important;
+        cursor: not-allowed !important
+    }
+
+    .products-filter p a.active {
+        cursor: default
+    }
+
+    .blog-filter {
+        margin-bottom: 40px;
+        margin-left: 0
+    }
+
+    .blog-filter form legend, .blog-filter p span {
+        text-transform: uppercase;
+        padding: 0 10px;
+        background: #f0f0f0;
+        display: inline-block
+    }
+
+    .blog-filter p {
+        margin-bottom: 0;
+        float: left
+    }
+
+    .blog-filter p span {
+        font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
+        color: #ccc
+    }
+
+    .blog-filter p a {
+        margin: 0 10px;
+        color: #999;
+        text-transform: uppercase
+    }
+
+    .blog-filter form {
+        margin-bottom: 0;
+        float: right
+    }
+
+    .blog-filter form legend {
+        margin-bottom: 0;
+        width: inherit;
+        border: 0;
+        border-bottom: none;
+        font: 300 14px/30px Roboto Condensed, Arial, Helvetica, sans-serif;
+        color: #ccc;
+        float: left
+    }
+
+    .blog-filter form select {
+        margin: 0 0 0 10px;
+        border-color: #f0f0f0;
+        border-radius: 0;
+        font: 400 12px/20px Arial, Helvetica, sans-serif;
+        color: #999;
+        float: right
+    }
+
+    .blog-filter form select:focus {
+        outline: 0
+    }
+
+    .thumbnails li {
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .thumbnail {
+        padding: 0;
+        background: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        text-align: center
+    }
+
+    .thumbnail-services {
+        padding: 20px 20px 0
+    }
+
+    .thumbnail-services i {
+        margin: 0 auto 20px;
+        width: 100px;
+        height: 100px;
+        border: 10px solid #333;
+        border-radius: 100%;
+        font-size: 60px;
+        line-height: 100px;
+        text-align: center;
+        display: block;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .thumbnail-services:hover i {
+        border-radius: 100%;
+        font-size: 80px;
+        color: #fff;
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg)
+    }
+
+    .thumbnail h3 {
+        padding: 20px 20px 10px
+    }
+
+    .thumbnail h3 span {
+        display: block
+    }
+
+    .thumbnail-services h3 {
+        padding: 0
+    }
+
+    .thumbnail .thumb {
+        margin-bottom: -80px;
+        width: 140px;
+        height: 140px;
+        border: 10px solid #fff;
+        transition: border-color linear .25s;
+        -ms-transition: border-color linear .25s;
+        -moz-transition: border-color linear .25s;
+        -webkit-transition: border-color linear .25s;
+        -o-transition: border-color linear .25s
+    }
+
+    .thumbnail:hover .thumb {
+        width: 150px;
+        height: 150px;
+        border: 5px solid #333
+    }
+
+    .thumbnail .thumbnail-detail {
+        padding: 95px 20px 20px;
+        color: #fff
+    }
+
+    .thumbnail .thumbnail-detail p {
+        margin-bottom: 0
+    }
+
+    .thumbnail-services p {
+        margin-bottom: 20px
+    }
+
+    .thumbnail-blog h3 {
+        padding: 20px
+    }
+
+    .thumbnail .blog-detail {
+        padding: 20px 20px 0;
+        background: #f9f9f9;
+        border-radius: 0 0 5px 5px;
+        color: #999;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .thumbnail .btn, .thumbnail:hover .blog-detail {
+        background: #333
+    }
+
+    .thumbnail .blog-detail .date {
+        font-style: normal
+    }
+
+    .thumbnail .blog-detail p {
+        margin-bottom: 20px;
+        font-size: 12px
+    }
+
+    .thumbnail .blog-detail .btn {
+        padding: 0;
+        width: 50%;
+        height: 40px;
+        border-radius: 5px 5px 0 0;
+        line-height: 40px
+    }
+
+    .thumbnail .blog-detail .btn:hover {
+        width: 100%
+    }
+
+    .thumbnail .btn {
+        color: #fff;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .thumbnail .btn:hover {
+        color: #fff
+    }
+
+    .thumbnail .thumb-hover a {
+        margin: 0 0 0 -25px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        line-height: 50px;
+        color: #fff;
+        text-align: center;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transition: all linear .1s;
+        -ms-transition: all linear .1s;
+        -moz-transition: all linear .1s;
+        -webkit-transition: all linear .1s;
+        -o-transition: all linear .1s
+    }
+
+    .social-links a, .social-links a i {
+        display: inline-block
+    }
+
+    .thumbnail:hover .thumb-hover a {
+        margin-top: -25px;
+        opacity: 1;
+        top: 50%
+    }
+
+    .thumbnail:hover .thumb-hover a:hover {
+        margin: 0;
+        top: 0
+    }
+
+    .thumbnail .thumb-hover a:hover {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        line-height: 100%;
+        opacity: 1;
+        top: 0;
+        left: 0
+    }
+
+    .thumbnail .thumb-hover a:hover i {
+        margin-top: -25px;
+        margin-left: -25px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%
+    }
+
+    .accordion {
+        margin-bottom: 30px
+    }
+
+    .accordion-group {
+        margin-bottom: 0;
+        border: none;
+        border-radius: 0
+    }
+
+    .accordion-heading a {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        font-size: 18px;
+        color: #333;
+        text-align: left;
+        text-transform: uppercase;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .accordion-heading a:hover {
+        color: #fff
+    }
+
+    .accordion-heading a i {
+        margin: 0 10px 0 0;
+        width: 50px;
+        height: 49px;
+        font-size: 24px;
+        line-height: 49px;
+        color: #333;
+        text-align: center;
+        transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -webkit-transition: all linear .25s;
+        -o-transition: all linear .25s
+    }
+
+    .accordion-heading a:hover i, .accordion-inner a {
+        color: #fff
+    }
+
+    .accordion-heading .accordion-toggle {
+        padding: 0
+    }
+
+    .accordion-inner {
+        padding: 15px 19px 14px;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-top: 0;
+        font: 400 12px/20px Arial, Helvetica, sans-serif;
+        text-align: left
+    }
+
+    .accordion-inner a:hover {
+        color: #333
+    }
+
+    .hero-unit {
+        padding: 50px;
+        margin-bottom: 40px;
+        background-color: #333;
+        border-radius: 5px;
+        color: #fff
+    }
+
+    .hero-unit .btn {
+        color: #333
+    }
+
+    .social-links {
+        background: #f9f9f9;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        text-align: center
+    }
+
+    .social-links a i {
+        width: 30px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+        color: #ccc;
+        text-align: center;
+        transition: all linear .5s;
+        -ms-transition: all linear .5s;
+        -moz-transition: all linear .5s;
+        -webkit-transition: all linear .5s;
+        -o-transition: all linear .5s
+    }
+
+    .social-links a:hover i {
+        background: #333;
+        color: #fff
+    }
+
+    .progress {
+        height: 30px;
+        background: #ccc;
+        border-radius: 0;
+        box-shadow: none;
+        line-height: 30px
+    }
+
+    .progress-text {
+        margin-bottom: 10px
+    }
+
+    .progress .bar {
+        text-shadow: none;
+        background: #333;
+        box-shadow: none
+    }
+
+    .msg_text {
+        max-height: 120px;
+        resize: none
+    }
+
+    .msg_btn:hover {
+        background: #fc0
+    }
+
+    .nicescroll-rails {
+        width: 10px !important;
+        background: rgba(0, 0, 0, .1) !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: inherit !important;
+        z-index: 9999 !important
+    }
+
+    .folio_iframe, .folio_viewport, .preloader, .timer_wrapper, .viewport_close {
+        position: absolute
+    }
+
+    .folio_iframe, .folio_viewport, .preloader {
+        top: 0;
+        right: 0;
+        left: 0
+    }
+
+    .nicescroll-rails div {
+        width: 10px !important;
+        background: rgba(0, 0, 0, .5) !important;
+        border: none !important;
+        border-radius: 0 !important
+    }
+
+    .icon_mail, .icon_skype, .icon_strekoza {
+        padding: 5px 10px
+    }
+
+    .icon_mail:before, .icon_skype:before, .icon_strekoza:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 32px;
+        height: 32px;
+        margin-right: 5px
+    }
+
+    .icon_mail:before {
+        background: url(./i/email_icon.png) no-repeat
+    }
+
+    .icon_skype {
+        color: #56bbf9
+    }
+
+    .icon_skype:before {
+        background: url(./i/skype_icon.png) no-repeat
+    }
+
+    .icon_strekoza {
+        color: #fd1007
+    }
+
+    .icon_strekoza:before {
+        background: url(./i/logo_strekoza.png) no-repeat
+    }
+
+    .folio_viewport {
+        display: none;
+        z-index: 50;
+        bottom: 0
+    }
+
+    .viewport_close {
+        cursor: pointer;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, .5);
+        color: #000;
+        font-size: 50px;
+        line-height: 50px;
+        text-align: center
+    }
+
+    .timer_holder, .timer_l, .timer_r {
+        position: absolute;
+        height: 20px;
+        border-radius: 100%
+    }
+
+    .viewport_close:hover {
+        background: rgba(0, 0, 0, .25);
+        color: #fff
+    }
+
+    .folio_external_link {
+        z-index: 10;
+        padding: 2px 5px;
+        background: rgba(0, 0, 0, .5)
+    }
+
+    .folio_external_link:hover {
+        background: rgba(255, 255, 255, .8)
+    }
+
+    .folio_iframe {
+        bottom: 0
+    }
+
+    .preloader {
+        z-index: 60;
+        bottom: 0;
+        background: url(./rubik.gif) 50% 50% no-repeat #fff
+    }
+
+    @media (min-width: 768px) and (max-width: 979px) {
+        .thumbnail-services h3 {
+            font-size: 25px;
+            line-height: 25px
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .row-fluid:after, .row-fluid:before, .row:after, .row:before {
+            display: table;
+            line-height: 0;
+            content: ""
+        }
+
+        .row-fluid:after, .row:after {
+            clear: both
+        }
+
+        .row {
+            margin-left: -30px
+        }
+
+        [class*=span] {
+            float: left;
+            min-height: 1px;
+            margin-left: 30px
+        }
+
+        .container, .navbar-fixed-bottom .container, .navbar-fixed-top .container, .navbar-static-top .container, .span12 {
+            width: 1170px
+        }
+
+        .span11 {
+            width: 1070px
+        }
+
+        .span10 {
+            width: 970px
+        }
+
+        .span9 {
+            width: 870px
+        }
+
+        .span8 {
+            width: 770px
+        }
+
+        .span7 {
+            width: 670px
+        }
+
+        .span6 {
+            width: 570px
+        }
+
+        .span5 {
+            width: 470px
+        }
+
+        .span4 {
+            width: 370px
+        }
+
+        .span3 {
+            width: 270px
+        }
+
+        .span2 {
+            width: 170px
+        }
+
+        .span1 {
+            width: 70px
+        }
+
+        .row-fluid, .row-fluid .span12 {
+            width: 100%
+        }
+
+        .offset12 {
+            margin-left: 1230px
+        }
+
+        .offset11 {
+            margin-left: 1130px
+        }
+
+        .offset10 {
+            margin-left: 1030px
+        }
+
+        .offset9 {
+            margin-left: 930px
+        }
+
+        .offset8 {
+            margin-left: 830px
+        }
+
+        .offset7 {
+            margin-left: 730px
+        }
+
+        .offset6 {
+            margin-left: 630px
+        }
+
+        .offset5 {
+            margin-left: 530px
+        }
+
+        .offset4 {
+            margin-left: 430px
+        }
+
+        .offset3 {
+            margin-left: 330px
+        }
+
+        .offset2 {
+            margin-left: 230px
+        }
+
+        .offset1 {
+            margin-left: 130px
+        }
+
+        .row-fluid [class*=span] {
+            display: block;
+            float: left;
+            width: 100%;
+            min-height: 30px;
+            margin-left: 2.564102564102564%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .row-fluid [class*=span]:first-child {
+            margin-left: 0
+        }
+
+        .row-fluid .controls-row [class*=span] + [class*=span] {
+            margin-left: 2.564102564102564%
+        }
+
+        .row-fluid .span11 {
+            width: 91.45299145299145%
+        }
+
+        .row-fluid .span10 {
+            width: 82.90598290598291%
+        }
+
+        .row-fluid .span9 {
+            width: 74.35897435897436%
+        }
+
+        .row-fluid .span8 {
+            width: 65.81196581196582%
+        }
+
+        .row-fluid .span7 {
+            width: 57.26495726495726%
+        }
+
+        .row-fluid .span6 {
+            width: 48.717948717948715%
+        }
+
+        .row-fluid .span5 {
+            width: 40.17094017094017%
+        }
+
+        .row-fluid .span4 {
+            width: 31.623931623931625%
+        }
+
+        .row-fluid .span3 {
+            width: 23.076923076923077%
+        }
+
+        .row-fluid .span2 {
+            width: 14.52991452991453%
+        }
+
+        .row-fluid .span1 {
+            width: 5.982905982905983%
+        }
+
+        .row-fluid .offset12 {
+            margin-left: 105.12820512820512%
+        }
+
+        .row-fluid .offset12:first-child {
+            margin-left: 102.56410256410257%
+        }
+
+        .row-fluid .offset11 {
+            margin-left: 96.58119658119658%
+        }
+
+        .row-fluid .offset11:first-child {
+            margin-left: 94.01709401709402%
+        }
+
+        .row-fluid .offset10 {
+            margin-left: 88.03418803418803%
+        }
+
+        .row-fluid .offset10:first-child {
+            margin-left: 85.47008547008548%
+        }
+
+        .row-fluid .offset9 {
+            margin-left: 79.48717948717949%
+        }
+
+        .row-fluid .offset9:first-child {
+            margin-left: 76.92307692307693%
+        }
+
+        .row-fluid .offset8 {
+            margin-left: 70.94017094017094%
+        }
+
+        .row-fluid .offset8:first-child {
+            margin-left: 68.37606837606839%
+        }
+
+        .row-fluid .offset7 {
+            margin-left: 62.393162393162385%
+        }
+
+        .row-fluid .offset7:first-child {
+            margin-left: 59.82905982905982%
+        }
+
+        .row-fluid .offset6 {
+            margin-left: 53.84615384615384%
+        }
+
+        .row-fluid .offset6:first-child {
+            margin-left: 51.28205128205128%
+        }
+
+        .row-fluid .offset5 {
+            margin-left: 45.299145299145295%
+        }
+
+        .row-fluid .offset5:first-child {
+            margin-left: 42.73504273504273%
+        }
+
+        .row-fluid .offset4 {
+            margin-left: 36.75213675213675%
+        }
+
+        .row-fluid .offset4:first-child {
+            margin-left: 34.18803418803419%
+        }
+
+        .row-fluid .offset3 {
+            margin-left: 28.205128205128204%
+        }
+
+        .row-fluid .offset3:first-child {
+            margin-left: 25.641025641025642%
+        }
+
+        .row-fluid .offset2 {
+            margin-left: 19.65811965811966%
+        }
+
+        .row-fluid .offset2:first-child {
+            margin-left: 17.094017094017094%
+        }
+
+        .row-fluid .offset1 {
+            margin-left: 11.11111111111111%
+        }
+
+        .row-fluid .offset1:first-child {
+            margin-left: 8.547008547008547%
+        }
+
+        .uneditable-input, input, textarea {
+            margin-left: 0
+        }
+
+        .controls-row [class*=span] + [class*=span] {
+            margin-left: 30px
+        }
+
+        .uneditable-input.span12, input.span12, textarea.span12 {
+            width: 1156px
+        }
+
+        .uneditable-input.span11, input.span11, textarea.span11 {
+            width: 1056px
+        }
+
+        .uneditable-input.span10, input.span10, textarea.span10 {
+            width: 956px
+        }
+
+        .uneditable-input.span9, input.span9, textarea.span9 {
+            width: 856px
+        }
+
+        .uneditable-input.span8, input.span8, textarea.span8 {
+            width: 756px
+        }
+
+        .uneditable-input.span7, input.span7, textarea.span7 {
+            width: 656px
+        }
+
+        .uneditable-input.span6, input.span6, textarea.span6 {
+            width: 556px
+        }
+
+        .uneditable-input.span5, input.span5, textarea.span5 {
+            width: 456px
+        }
+
+        .uneditable-input.span4, input.span4, textarea.span4 {
+            width: 356px
+        }
+
+        .uneditable-input.span3, input.span3, textarea.span3 {
+            width: 256px
+        }
+
+        .uneditable-input.span2, input.span2, textarea.span2 {
+            width: 156px
+        }
+
+        .uneditable-input.span1, input.span1, textarea.span1 {
+            width: 56px
+        }
+
+        .thumbnails {
+            margin-left: -30px
+        }
+
+        .thumbnails > li {
+            margin-left: 30px
+        }
+
+        .row-fluid .thumbnails {
+            margin-left: 0
+        }
+    }
+
+    .timer_holder {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+        z-index: 10;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        animation-fill-mode: both
+    }
+
+    .timer_wrapper {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        overflow: hidden
+    }
+
+    .timer_wrapper.mod_right {
+        left: 50%
+    }
+
+    .timer_l, .timer_r {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 20px;
+        border: 10px solid #fc0
+    }
+
+    .no_animation .timer_l, .no_animation .timer_r {
+        transition: none !important
+    }
+
+    .timer_r {
+        left: -10px;
+        clip: rect(auto, auto, auto, 10px);
+        transform: rotate(-180deg)
+    }
+
+    .timer_l, .timer_r {
+        -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg)
+    }
+
+    .timer_l {
+        clip: rect(auto, 10px, auto, auto);
+        transform: rotate(-180deg)
+    }</style>
+</head>
+<body>
+<div class="gl_wrapper">
+    <div class="sidebar-menu">
+        <a class="n_logo hover_animate" href="#">Naverstay.me</a>
+        <ul>
+            <li>
+                <a class="pageLink" href="#" data-refid="home">Недавно наверстанные</a>
+            </li>
+            <li>
+                <a class="pageLink" href="#" data-refid="portfolio">Портфолио</a>
+            </li>
+            <li>
+                <a class="pageLink" href="#" data-refid="contact">Контакты</a>
+            </li>
+        </ul>
+        <a class="close-sidebar-menu">
+            <i class="icon-align-justify"></i>
+        </a>
+
+        <div class="footer"><p>&copy; 2014-2015 <span>Naverstay</span></p></div>
+    </div>
+    <div id="home" class="section section-animate">
+        <div id="homePreloader" class="preloader">
+            <noscript>
+                <h2 class="margin-top text_center"><span>Включите javascript</span></h2>
+            </noscript>
+        </div>
+        <div id="slides">
+            <ul class="slides-container">
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/daddy_kid.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>Daddy's kid</h1><span class="lead">Верстка + js, адаптивно</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/servus.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>Servus.Pro</h1><span class="lead">Верстка + js, адаптивно</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/ivave.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>Ivave</h1><span class="lead">Верстка + js</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/mod_x.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>Mod X</h1><span class="lead">Верстка</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/br_project.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>BR Project</h1><span class="lead">Лендинг + админка</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/vibery.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>Выбери.by</h1><span class="lead">Адаптивная вверстка + js</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="slide_link" href="#">
+                        <img src="i/fav/bongo.jpg" alt="Photo">
+                    </a>
+
+                    <div class="slides-detail">
+                        <i class="icon-star"></i>
+
+                        <h1>Bongo Bong</h1><span class="lead">Адаптивная вверстка + js</span>
+                        <a href="#" class="btn btn-large btn-goto" data-refid="portfolio">Перейти в портфолио</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="slides-navigation">
+                <a href="#" class="prev">
+                    <i class="icon-angle-left"></i>
+                </a>
+                <a href="#" class="next">
+                    <i class="icon-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio" class="section">
+        <div id="portfolioContent" class="container">
+            <div class="row">
+                <div class="span12"><h1 class="margin-top"><span>Портфолио</span></h1>
+<span class="lead margin-bottom">Среди моих последних работ <span>адаптивные</span>,
+    <br>
+    <span>мобильные приложения</span> и <span>полноэкранные</span> сайты.</span>
+
+                    <div id="filters" class="row products-filter disable_mod">
+                        <p>
+                            <a href="#" data-filter="*" class="active">Все</a>
+                            <a href="#" data-filter=".mobile_ver">Мобильные версии</a>
+                            <a href="#" data-filter=".adaptive_ver">Адаптивные</a>
+                            <a href="#" data-filter=".fullwidth_ver">Полноэкранные сайты</a>
+                        </p>
+                    </div>
+                    <div id="isotope" style="display: none;">
+                        <div id="isotopPreloader" class="preloader"></div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/sarah.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/sarah.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/sarah/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Sarah</h4>Адаптивная верстка + js
+                                <!--<a class="external_link icon-external-link" title="Перейти на " target="_blank" rel="nofollow" href=""></a>-->
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/servus.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/servus.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/servus/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Servus</h4>Адаптивная верстка + js
+                                <!--<a class="external_link icon-external-link" title="Перейти на " target="_blank" rel="nofollow" href=""></a>-->
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/daddy_kid.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/daddy_kid.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/daddy_kid/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Daddy's kid</h4>Адаптивная верстка + js
+                                <!--<a class="external_link icon-external-link" title="Перейти на " target="_blank" rel="nofollow" href=""></a>-->
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/dram.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/dram.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/dram/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Драмтеатр</h4>Адаптивная верстка + js
+                                <!--<a class="external_link icon-external-link" title="Перейти на " target="_blank" rel="nofollow" href=""></a>-->
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/ikona.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/ikona.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/ikona/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>IKONA</h4>Адаптивная верстка + js
+                                <a class="external_link icon-external-link" title="Перейти на ikonamag.com"
+                                   target="_blank" rel="nofollow" href="http://www.ikonamag.com"></a>
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/fna.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/dram.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/fna/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>FNA</h4>Адаптивная верстка + js
+                                <!--<a class="external_link icon-external-link" title="Перейти на " target="_blank" rel="nofollow" href=""></a>-->
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/real.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/real.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/real/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Real</h4>Адаптивная верстка + js
+                                <a class="external_link icon-external-link" title="Перейти на kharkovremont.com.ua"
+                                   target="_blank" rel="nofollow" href="http://kharkovremont.com.ua/"></a>
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/sitonica.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/sitonica.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/sitonica/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Sitonica</h4>Адаптивная верстка + js
+                                <a class="external_link icon-external-link" title="Перейти на sitonica.ru"
+                                   target="_blank" rel="nofollow" href="http://www.sitonica.ru/"></a>
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/sg.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/sg.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/sg/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>СГ</h4>Адаптивная верстка + js
+
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/printlot.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/printlot.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/printlot/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Printlot</h4>Адаптивная верстка + js
+
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/books.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/books.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/books/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Школа Великих Книг</h4>Адаптивная верстка + js
+
+                            </div>
+                        </div>
+
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/bongo.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/bongo.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/bongo/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Bongo Bong</h4>Адаптивная верстка + js</div>
+                        </div>
+
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/armada.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/armada.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/armada/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Armada</h4>Меховая фабрика</div>
+                        </div>
+
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/ivave.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/ivave.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/ivave/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>IVAVE</h4>Музыкальный портал</div>
+                        </div>
+
+                        <div class="item mobile_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/ivave_t.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/ivave_t.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/ivave_tab/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>IVAVE</h4>Музыкальный портал, мобильная версия</div>
+                        </div>
+
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/metrix.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/metrix.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/metrix/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Metrix</h4>Верстка + графики + js</div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/vibery.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/vibery.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/viberi_by/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Выбери.by</h4>Адаптивная верстка
+                                <a class="external_link icon-external-link" title="Перейти на viberi.by" target="_blank"
+                                   rel="nofollow" href="http://viberi.by/"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/brproject.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/brproject.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/brproject/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>BR Project</h4>Верстка + анимации</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/br_office.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/br_office.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/br_office/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>BR Project office</h4>Верстка + анимации</div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/metro.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/metro.jpeg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/metro_grab/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Metro</h4>Рип странички</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/lugovskoy.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/lugovskoy.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/lugovsky/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Lugovskoy</h4>Верстка + анимации
+                                <a class="external_link icon-external-link" title="Перейти на lugovskoy.pro"
+                                   target="_blank" rel="nofollow" href="http://lugovskoy.pro/"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/gorky.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/gorky.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/gorky/home.html" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Gorky</h4>Адаптивная верстка + js</div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/ctm.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/ctm.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/ctm/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>CTM</h4>Адаптивная верстка + js
+                                <a class="external_link icon-external-link" title="Перейти на www.stm18.ru"
+                                   target="_blank" rel="nofollow" href="http://www.stm18.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/modx.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/modx.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/modx/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>ModX</h4>Верстка</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/sss.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/sss.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/sss/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>СпецСитиСтрой</h4>Верстка + анимации
+                                <a class="external_link icon-external-link" title="Перейти на speccitystroy.ru"
+                                   target="_blank" rel="nofollow" href="http://speccitystroy.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/anketka.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/anketka.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/anketka/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Анкетка</h4>онлайн исследования потребительского рынка</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/furnitura.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/furnitura.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/furnitura/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Фурнитура</h4>Заказ фурнитуры онлайн
+                                <a class="external_link icon-external-link" title="Перейти на okfur.ru" target="_blank"
+                                   rel="nofollow" href="http://okfur.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/sz.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/sz.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/sz/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Союз заводов</h4>упаковочные материалы
+                                <a class="external_link icon-external-link" title="Перейти на szzd.ru" target="_blank"
+                                   rel="nofollow" href="http://szzd.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/pharmacy.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/pharmacy.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/farmacy/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Farmacy</h4>Продажа косметики
+                                <a class="external_link icon-external-link" title="Перейти на http://mir-farmasi.com/"
+                                   target="_blank" rel="nofollow" href="http://mir-farmasi.com/"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/masterfree.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/masterfree.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/masterf/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Master free</h4>Поиск мастеров красоты</div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/kifa_2.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/kifa_2.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/kifa/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Kifa</h4>Производство дверей</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/antispor.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/antispor.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/antispor/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Антиспор</h4>ОРИГИНАЛЬНЫЙ ПРЕПАРАТ</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/acet.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/acet.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/acetGF/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>АСЕТ</h4>Всеукраинская благотворительная организация</div>
+                        </div>
+                        <div class="item mobile_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/avalux.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/avalux.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/avalux/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Avalux</h4>Верстка мобильной версии сайта</div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/lanna.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/lanna.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/lanna/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>lanna kamilina</h4>Салон красоты
+                                <a class="external_link icon-external-link" title="Перейти на http://lannakamilina.ru/"
+                                   target="_blank" rel="nofollow" href="http://lannakamilina.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/sewing.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/sewing.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/sewing/main.html" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Машинка времени</h4>Ателье винтажной моды
+                                <a class="external_link icon-external-link"
+                                   title="Перейти на http://mashinka-vremeni.ru/" target="_blank" rel="nofollow"
+                                   href="http://mashinka-vremeni.ru"></a>
+                            </div>
+                        </div>
+                        <div class="item mobile_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/roboforex.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/roboforex.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/robo/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>roboforex</h4>Мобильная forex-площадка</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/whispa.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/whispa.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/whispa/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>whispa</h4>Music portal, parallax</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/piter.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/piter.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/oknapiter/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>окно в Питер</h4>Продажа металлопластиковых окон</div>
+                        </div>
+                        <div class="item mobile_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/energo.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/energo.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/energo/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Энерго</h4>Верстка мобильной версии сайта</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/roals.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/roals.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/roals/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Roals</h4>Motion design & video effects</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/vitta.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/vitta.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/vitta_trade/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Витта-Трэйд</h4>Производство чехлов и сумок
+                                <a class="external_link icon-external-link" title="Перейти на allchexol.ru"
+                                   target="_blank" rel="nofollow" href="http://www.allchexol.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/gettable.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/gettable.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/gettable/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Gettable</h4>Поиск ресторанов</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/cartridge.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/cartridge.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/cartridge/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Скупка БУ картриджей</h4>Верстка лендинга</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/andron.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/andron.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/andron/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Andron</h4>Верстка + анимации
+                                <a class="external_link icon-external-link" title="Перейти на andronwatch.ru"
+                                   target="_blank" rel="nofollow" href="http://andronwatch.ru"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/allira.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/allira.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/allira/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Allira</h4>Верстка
+                                <a class="external_link icon-external-link" title="Перейти на allira.ru" target="_blank"
+                                   rel="nofollow" href="http://allira.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/einsof.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/einsof.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/einsof1/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Эйнсоф</h4>Продажа строительных материалов
+                                <a class="external_link icon-external-link" title="Перейти на m-profil.com"
+                                   target="_blank" rel="nofollow" href="http://www.m-profil.com/"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/i4g.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/i4g.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/i4g/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Intellect 4G</h4>Производство и реализация топливных модулей
+                                <a class="external_link icon-external-link" title="Перейти на intellect4g.ru"
+                                   target="_blank" rel="nofollow" href="http://intellect4g.ru/"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/elevate.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/elevate.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/elevate/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Elevate</h4>PSD2HTML, responsive</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/cars.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/cars.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/carzz/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>ОАО «172 ЦАРЗ»</h4>172 центральный автомобильный ремонтный
+                                завод
+                                <a class="external_link icon-external-link" title="Перейти на 172carz.ru"
+                                   target="_blank" rel="nofollow" href="http://www.172carz.ru"></a>
+                            </div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/ramokna.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/ramokna.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/ram/" role="button" class="link showFolioItem" data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>рамокна</h4>Продажа металлопластиковых окон
+                                <a class="external_link icon-external-link" title="Перейти на ramokna.ru"
+                                   target="_blank" rel="nofollow" href="http://www.ramokna.ru/okna_rashet.html"></a>
+                            </div>
+                        </div>
+                        <div class="item adaptive_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/toursound-app.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/toursound-app.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/tour/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>TOURSOUND</h4>Портал профессионалов шоу-бизнеса</div>
+                        </div>
+                        <div class="item mobile_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/congrat.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/congrat.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/yoggi/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>yoggi</h4>Верстка мобильного приложения</div>
+                        </div>
+                        <div class="item fullwidth_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/toyota.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/toyota.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/toyota/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Toyota-центр Харьков</h4>Верстка + анимации</div>
+                        </div>
+                        <div class="item mobile_ver">
+                            <div class="thumb-hover">
+                                <img src="i/thumbs/750/nosorog_dannie3.jpg" alt="Portfolio">
+                                <a href="i/thumbs/960/nosorog_dannie3.jpg" class="view-fancybox" rel="tag">
+                                    <i class="icon-camera"></i>
+                                </a>
+                                <a href="/i/folio/nosorog/" role="button" class="link showFolioItem"
+                                   data-toggle="viewport">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+                            <div class="masonry-detail"><h4>Носорог</h4>Верстка мобильной версии сайта</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="folio_viewport">
+            <a href="#" title="Закрыть" class="viewport_close icon-eye-close"></a>
+
+            <div id="iframePreloader" class="preloader"></div>
+            <a id="external_link" class="external_link folio_external_link" target="_blank" title="" href="#">Ссылка на
+                эту страницу</a>
+            <iframe class="folio_iframe" src="preloader.html" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+    <div id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="span12"><h1 class="margin-top">Связаться<span class="n_font hover_animate">.ME</span></h1>
+                    <span class="lead margin-bottom"></span></div>
+            </div>
+        </div>
+        <!--<div id="map-canvas"></div>-->
+        <div class="container">
+            <div class="row">
+                <div class="span6"><h3 class="margin-bottom">Контакты</h3>
+                    <address class="margin-bottom">
+                        <a class="icon_mail" href="mailto:naverstay.me@gmail.com">naverstay.me@gmail.com</a>
+                    </address>
+                    <address class="margin-bottom">
+                        <a class="icon_skype" href="skype:k.e.xxx">k.e.xxx</a>
+                    </address>
+                    <h3 class="margin-bottom">Партнеры</h3>
+                    <address class="margin-bottom">
+                        <a class="icon_strekoza" href="http://strekosa.bz">http://strekosa.bz</a>
+                    </address>
+                </div>
+                <div class="span6"><h3 class="half-margin-bottom">Обратная связь</h3>
+
+                    <form action="#" class="contact-form">
+                        <fieldset>
+                            <legend>Contact us</legend>
+                            <input type="text" name="user_name" placeholder="Ваше имя" class="span6">
+                            <input type="text" name="user_email" placeholder="Ваша почта" class="span6">
+                            <textarea rows="3" name="user_msg" placeholder="Ваше собщение"
+                                      class="span12 msg_text"></textarea>
+                            <button type="submit" class="btn btn-large msg_btn">Отправить</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script>
+  var cb = function(){
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = 'styles/styles_min.css';
+    var h = document.getElementsByTagName('link')[0];
+    h.parentNode.insertBefore(l, h);
+  };
+
+   window.addEventListener('load', cb);
+</script>--><!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>-->
+    <script async type="text/javascript" src="js/all_min.ug.js"></script>
+
+</div>
+</body>
+</html>
